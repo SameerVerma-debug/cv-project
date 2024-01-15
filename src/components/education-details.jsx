@@ -17,6 +17,7 @@ export const EducationDetails = () => {
     setEducationInfo([
       ...educationInfo,
       {
+        id:educationInfo.length == 0 ? 1 : educationInfo[educationInfo.length-1].id + 1,
         school: schoolInput.current.value,
         degree: degreeInput.current.value,
         startDate: startDateInput.current.value,
@@ -35,9 +36,25 @@ export const EducationDetails = () => {
     <div className="heading-form-container">
       <div className="header">
         <h2>Education Details</h2>
-        <button onClick={handleExpandClick}>
-          {expand ? "Collapse" : "Expand"}
+        <button className="expand-button" onClick={handleExpandClick}>
+          {expand ? (
+            <img
+              src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
+              className="expand-icon"
+            />
+          ) : (
+            <img
+              src="https://rmathr.github.io/cv-project/9a85e2732c3a2bab601e.png"
+              className="expand-icon"
+            />
+          )}
         </button>
+      </div>
+
+      <div>
+      {educationInfo.map((education) => {
+        return <h3 className="school-name" key={education.id}>{education.school}</h3>
+      })}
       </div>
 
       {expand && (
@@ -96,11 +113,7 @@ export const EducationDetails = () => {
         </form>
       )}
 
-      <div>
-      {educationInfo.map((education) => {
-        return <h2>{education.school}</h2>
-      })}
-      </div>
+      
     </div>
   );
 };

@@ -1,3 +1,77 @@
+*{
+  --padding:35px;
+  --resume-section-heading-background:rgb(234, 234, 234);
+  --border-radius:3px;
+}
+
 .resume-template{
   display: grid;
+  max-width:800px;
+  grid-template-rows: auto 1fr 1fr;
+  height: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(230, 207, 207, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*General Info Section*/
+
+.resume-general-info{
+  background-color: #0e374e;
+  color: white;
+  padding:24px 36px;
+  height: fit-content;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap:18px;
+}
+
+.resume-general-info > h1{
+  text-align: center;
+}
+
+.contact-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:18px;
+}
+
+.icon-info-container{
+  display: flex;
+  align-items: center;
+  gap:6px;
+}
+
+/*Education Info Section*/
+.resume-education-info,
+.resume-experience-info{
+  padding:var(--padding);
+}
+
+.resume-education-info{
+  padding-bottom: 0;
+}
+
+.resume-education-info > h2,
+.resume-experience-info > h2{
+  background-color: var(--resume-section-heading-background);
+  text-align: center;
+  padding-top:5px;
+  padding-bottom: 5px;
+  border-radius: var(--border-radius);
+  height:fit-content;
+}
+
+.education,.experience{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  gap:30px;
+  margin-top:20px;
+}
+
+.date-location-container{
+  width:140px;
 }

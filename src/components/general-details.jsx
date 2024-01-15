@@ -5,13 +5,13 @@ import "../styles/form.css";
 
 export const GeneralDetails = () => {
   const [expand, setExpand] = useState(false);
-  const {setGeneralInfo } = useContext(ResumeContext);
+  const { setGeneralInfo } = useContext(ResumeContext);
 
   const nameInput = useRef();
   const emailInput = useRef();
   const phoneInput = useRef();
   const addressInput = useRef();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setGeneralInfo({
@@ -31,8 +31,18 @@ export const GeneralDetails = () => {
     <div className="heading-form-container">
       <div className="header">
         <h2>General Information</h2>
-        <button onClick={handleExpandClick}>
-          {expand ? "Collapse" : "Expand"}
+        <button className="expand-button" onClick={handleExpandClick}>
+          {expand ? (
+            <img
+              src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
+              class="expand-icon"
+            />
+          ) : (
+            <img
+              src="https://rmathr.github.io/cv-project/9a85e2732c3a2bab601e.png"
+              class="expand-icon"
+            />
+          )}
         </button>
       </div>
 

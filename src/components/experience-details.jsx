@@ -18,6 +18,7 @@ export const ExperienceDetails = () => {
     setExperienceInfo([
       ...experienceInfo,
       {
+        id: experienceInfo.length == 0 ? 1 : experienceInfo[experienceInfo.length-1].id + 1,
         company: companyInput.current.value,
         position: positionInput.current.value,
         startDate: startDateInput.current.value,
@@ -37,9 +38,25 @@ export const ExperienceDetails = () => {
     <div className="heading-form-container">
       <div className="header">
         <h2>Experience Details</h2>
-        <button onClick={handleExpandClick}>
-          {expand ? "Collapse" : "Expand"}
+        <button className="expand-button" onClick={handleExpandClick}>
+          {expand ? (
+            <img
+              src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
+              class="expand-icon"
+            />
+          ) : (
+            <img
+              src="https://rmathr.github.io/cv-project/9a85e2732c3a2bab601e.png"
+              class="expand-icon"
+            />
+          )}
         </button>
+      </div>
+
+      <div >
+        {experienceInfo.map((experience) => {
+          return <h3 className="company-name" key={experience.id}>{experience.company}</h3>;
+        })}
       </div>
 
       {expand && (
@@ -106,12 +123,6 @@ export const ExperienceDetails = () => {
           <button id="submit">Submit</button>
         </form>
       )}
-
-      <div>
-        {experienceInfo.map((experience) => {
-          return <h2>{experience.company}</h2>;
-        })}
-      </div>
     </div>
   );
 };

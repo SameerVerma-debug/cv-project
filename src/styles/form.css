@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   --gap-between-fields:10px;
-  --form-container-width:350px;
+  --form-container-width:max(100%,250px);
   --padding-inside-forms:30px;
   --margin-between-forms:20px;
 }
@@ -11,7 +11,7 @@
 .heading-form-container{
   width:var(--form-container-width);
   padding:var(--padding-inside-forms);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(230, 207, 207, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius:20px;
   margin-bottom:var(--margin-between-forms);
 }
@@ -26,6 +26,7 @@ form{
   display: flex;
   flex-direction: column;
   gap:var(--gap-between-fields);
+  margin-top:20px;
 }
 
 label{
@@ -36,4 +37,42 @@ label{
 
 .input-label-container,input,textarea{
   width:100%;
+}
+
+input,textarea{
+  padding:8px;
+  font-size:14px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(246, 246, 246);
+}
+
+#submit{
+  border: none;
+  background-color: rgb(24, 127, 245);
+  border-radius: 4px;
+  color: white;
+  padding: 8px 16px;
+  align-self:flex-end;
+  width: min(50%,120px);
+  cursor: pointer;
+  font-size: 14px;
+  margin-top:10px;
+}
+
+.expand-button{
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.expand-button > img{
+  height: 15px;
+}
+
+.school-name, .company-name{
+  border-top:5px solid rgb(224, 224, 224);
+  margin-top:10px;
+  padding-top:10px;
 }
