@@ -1,5 +1,7 @@
 import { useRef, useState, useContext } from "react";
 import { ResumeContext } from "../App";
+import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleUp } from "react-icons/fa6";
 import "../styles/form.css";
 
 export const EducationDetails = () => {
@@ -37,17 +39,7 @@ export const EducationDetails = () => {
       <div className="header">
         <h2>Education Details</h2>
         <button className="expand-button" onClick={handleExpandClick}>
-          {expand ? (
-            <img
-              src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
-              className="expand-icon"
-            />
-          ) : (
-            <img
-              src="https://rmathr.github.io/cv-project/9a85e2732c3a2bab601e.png"
-              className="expand-icon"
-            />
-          )}
+        {expand ? <FaAngleUp/> : <FaAngleDown/>}
         </button>
       </div>
 
@@ -60,52 +52,57 @@ export const EducationDetails = () => {
       {expand && (
         <form onSubmit={handleSubmit}>
           <div className="label-input-container">
-            <label htmlFor="school">School</label>
+            <label htmlFor="school">School*</label>
             <input
               id="school"
               ref={schoolInput}
               type="text"
               placeholder="Enter School/University"
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="degree">Degree</label>
+            <label htmlFor="degree">Degree*</label>
             <input
               id="degree"
               ref={degreeInput}
               type="text"
               placeholder="Enter Degree"
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="start-date">Start Date</label>
+            <label htmlFor="start-date">Start Date*</label>
             <input
               id="start-date"
               type="text"
               placeholder="Enter Start Date"
               ref={startDateInput}
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="end-date">End Date</label>
+            <label htmlFor="end-date">End Date*</label>
             <input
               id="end-date"
               ref={endDateInput}
               type="text"
               placeholder="Enter end-date"
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="location">Location</label>
+            <label htmlFor="location">Location*</label>
             <input
               id="location"
               ref={locationInput}
               type="text"
               placeholder="Enter Location"
+              required
             />
           </div>
 

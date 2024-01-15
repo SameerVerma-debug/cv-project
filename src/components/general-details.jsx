@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { useContext } from "react";
 import { ResumeContext } from "../App";
+import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleUp } from "react-icons/fa6";
 import "../styles/form.css";
 
 export const GeneralDetails = () => {
@@ -32,59 +34,53 @@ export const GeneralDetails = () => {
       <div className="header">
         <h2>General Information</h2>
         <button className="expand-button" onClick={handleExpandClick}>
-          {expand ? (
-            <img
-              src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
-              class="expand-icon"
-            />
-          ) : (
-            <img
-              src="https://rmathr.github.io/cv-project/9a85e2732c3a2bab601e.png"
-              class="expand-icon"
-            />
-          )}
+          {expand ? <FaAngleUp/> : <FaAngleDown/>}
         </button>
       </div>
 
       {expand && (
         <form onSubmit={handleSubmit}>
           <div className="label-input-container">
-            <label htmlFor="fullname">Full Name</label>
+            <label htmlFor="fullname">Full Name*</label>
             <input
               id="fullname"
               ref={nameInput}
               type="text"
               placeholder="Enter Full Name"
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email*</label>
             <input
               id="email"
               ref={emailInput}
               type="email"
               placeholder="Enter Email"
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="phone-number">Phone Number</label>
+            <label htmlFor="phone-number">Phone Number*</label>
             <input
               id="phone-number"
               type="text"
               placeholder="Enter Phone Number"
               ref={phoneInput}
+              required
             />
           </div>
 
           <div className="label-input-container">
-            <label htmlFor="address">Address</label>
+            <label htmlFor="address">Address*</label>
             <input
               id="address"
               type="text"
               ref={addressInput}
               placeholder="Enter Address"
+              required
             />
           </div>
 

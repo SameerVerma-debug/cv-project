@@ -17,7 +17,7 @@ export const ResumeExperienceInfo = () => {
             </div>
 
             <div className="job-description-container">
-              <p>{experience?.company}</p>
+              <p style={{fontWeight:"bold"}}>{experience?.company}</p>
               <p>{experience?.position}</p>
               <p>{experience?.description}</p>
             </div>
